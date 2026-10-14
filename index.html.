@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Date Invitation 💌</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 22px;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background: linear-gradient(135deg, #fff0f4, #fce1ed, #fff7f0);
+      color: #542d40;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      width: 100%;
+      max-width: 440px;
+      padding: 35px 25px;
+      border-radius: 28px;
+      box-shadow: 0 12px 45px rgba(150, 69, 104, 0.15);
+      border: 1px solid #f8d8e5;
+      animation: appear 0.6s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      color: #bd7295;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      line-height: 1.3;
+      margin: 15px 0;
+      color: #8d4567;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #886979;
+    }
+
+    button, select {
+      font: inherit;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 13px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(150, 69, 104, 0.15);
+    }
+
+    .primary {
+      background: #c65f8a;
+      color: white;
+    }
+
+    .secondary {
+      background: #fae2ec;
+      color: #914565;
+    }
+
+    .field {
+      text-align: left;
+      margin-top: 22px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 9px;
+      color: #8d4567;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #e8c5d5;
+      background: #fffafd;
+      border-radius: 12px;
+      color: #542d40;
+      outline-color: #c65f8a;
+    }
+
+    .details {
+      background: #fff3f7;
+      border-radius: 17px;
+      padding: 18px;
+      margin: 22px 0;
+      text-align: left;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .details strong {
+      color: #914565;
+    }
+
+    .small {
+      font-size: 12px;
+      color: #ad8798;
+      margin-top: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .floating-hearts {
+      font-size: 23px;
+      letter-spacing: 9px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 380px) {
+      .card {
+        padding: 28px 19px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="card">
+
+    <!-- PAGE 1: INVITATION -->
+    <section id="page1">
+      <div class="heart">💌</div>
+      <div class="eyebrow">A very important question</div>
+
+      <h1>Would you like to go out on a date with me?</h1>
+
+      <p>
+        I've been thinking... you, me, a movie and some popcorn.
+        Sounds like a pretty perfect date, doesn't it? 🥹
+      </p>
+
+      <button class="button primary" onclick="openDate()">
+        Yes 💗
+      </button>
+
+      <button class="button secondary" onclick="openDate()">
+        Absolutely yes! 🥰
+      </button>
+
+      <div class="floating-hearts">♡ ♥ ♡</div>
+      <p class="small">Made with love, just for you.</p>
+    </section>
+
+
+    <!-- PAGE 2: DATE SELECTION -->
+    <section id="page2" class="hidden">
+      <div class="heart">🍿</div>
+      <div class="eyebrow">It's a date!</div>
+
+      <h1>Now, pick our date 💕</h1>
+
+      <p>
+        Choose your preferred date and time for our little
+        cinema adventure.
+      </p>
+
+      <div class="field">
+        <label for="date">📅 DATE</label>
+        <select id="date">
+          <option value="17 October 2026">Saturday, 17 October</option>
+          <option value="18 October 2026">Sunday, 18 October</option>
+          <option value="19 October 2026">Monday, 19 October</option>
+          <option value="20 October 2026">Tuesday, 20 October</option>
+          <option value="21 October 2026">Wednesday, 21 October</option>
+          <option value="22 October 2026">Thursday, 22 October</option>
+          <option value="23 October 2026">Friday, 23 October</option>
+          <option value="24 October 2026">Saturday, 24 October</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="time">🕒 TIME</label>
+        <select id="time">
+          <option value="14:00">14:00 (2 PM)</option>
+          <option value="17:00">17:00 (5 PM)</option>
+          <option value="19:00">19:00 (7 PM)</option>
+        </select>
+      </div>
+
+      <button class="button primary" onclick="confirmDate()">
+        Confirm our date 💌
+      </button>
+
+      <button class="button secondary" onclick="goBack()">
+        ← Back
+      </button>
+
+      <p class="small">
+        Pick the date that works best for you, handsome. ❤️
+      </p>
+    </section>
+
+
+    <!-- PAGE 3: DATE CONFIRMED -->
+    <section id="page3" class="hidden">
+      <div class="heart">💖</div>
+      <div class="eyebrow">Officially a date</div>
+
+      <h1>It's a date, baby! 🥹</h1>
+
+      <p>
+        I can't wait to spend some quality time with you.
+        Now you have no excuse not to look cute for me! 🤭
+      </p>
+
+      <div class="details">
+        <div>📅 <strong>Date:</strong> <span id="chosenDate"></span></div>
+        <div>🕒 <strong>Time:</strong> <span id="chosenTime"></span></div>
+        <div>📍 <strong>Place:</strong> Emperors Palace</div>
+        <div>🎬 <strong>Movie:</strong> The Other Mommy</div>
+        <div>🍿 <strong>Plus one:</strong> Me, obviously! ❤️</div>
+      </div>
+
+      <p>
+        Your only job is to show up and let me spoil you
+        with my amazing company. 😉
+      </p>
+
+      <button class="button primary" onclick="shareDate()">
+        Share our date 💌
+      </button>
+
+      <button class="button secondary" onclick="startOver()">
+        Change our plans
+      </button>
+
+      <p class="small">
+        All my love, always. ♡
+      </p>
+    </section>
+
+  </main>
+
+  <script>
+    function showPage(pageNumber) {
+      document.getElementById("page1").classList.add("hidden");
+      document.getElementById("page2").classList.add("hidden");
+      document.getElementById("page3").classList.add("hidden");
+
+      document.getElementById("page" + pageNumber)
+        .classList.remove("hidden");
+    }
+
+    function openDate() {
+      showPage(2);
+    }
+
+    function goBack() {
+      showPage(1);
+    }
+
+    function confirmDate() {
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+
+      document.getElementById("chosenDate").textContent = date;
+      document.getElementById("chosenTime").textContent = time;
+
+      showPage(3);
+    }
+
+    function startOver() {
+      showPage(2);
+    }
+
+    async function shareDate() {
+      const date = document.getElementById("chosenDate").textContent;
+      const time = document.getElementById("chosenTime").textContent;
+
+      const message =
+        "It's a date! 💖🎬\n" +
+        "Date: " + date + "\n" +
+        "Time: " + time + "\n" +
+        "Place: Emperors Palace\n" +
+        "Movie: The Other Mommy 🍿❤️";
+
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: "Our Cinema Date 💌",
+            text: message
+          });
+        } catch (error) {
+          if (error.name !== "AbortError") {
+            copyDate(message);
+          }
+        }
+      } else {
+        copyDate(message);
+      }
+    }
+
+    async function copyDate(message) {
+      try {
+        await navigator.clipboard.writeText(message);
+        alert("Our date details have been copied! 💗");
+      } catch (error) {
+        window.prompt("Copy your date details:", message);
+      }
+    }
+  </script>
+
+</body>
+</html>
